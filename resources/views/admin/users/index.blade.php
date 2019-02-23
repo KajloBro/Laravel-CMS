@@ -2,12 +2,17 @@
 
 @section('content')
 
+    @if (Session::has('user_deleted'))
+        <p>{{ session('user_deleted') }}</p>
+    @endif
+
     <h1>Users</h1>
 
     <table class="table">
         <thead>
             <tr>
             <th scope="col">ID</th>
+            <th scope="col">Photo</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">Created</th>
@@ -22,7 +27,8 @@
                 
                 <tr>
                 <td>{{ $user->id }}</td>
-                <td>{{ $user->name }}</td>
+                <td><img height="50" src="{{ $user->photo ? $user->photo->path : 'http://placehold.it/400x400' }}" alt=""></td>
+                <td><a href="{{ route('admin.users.edit', $user->id) }}">{{ $user->name }}</a></td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->created_at->diffForHumans() }}</td>
                 <td>{{ $user->updated_at->diffForHumans() }}</td>
