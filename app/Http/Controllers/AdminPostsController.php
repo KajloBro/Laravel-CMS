@@ -9,6 +9,7 @@ use App\Http\Requests\PostsRequest;
 use App\Post;
 use App\Photo;
 use App\Category;
+use App\Comment;
 use Illuminate\Support\Facades\Auth;
 
 class AdminPostsController extends Controller
@@ -34,11 +35,9 @@ class AdminPostsController extends Controller
     {
         $input = $request->all();
         
-        // Set user
         $user = Auth::user()->id;
         $input['user_id'] = $user;
 
-        // Set photo
         if ($file = $request->file('photo_id')) {
             
             $name = time() . $file->getClientOriginalName();
@@ -98,5 +97,14 @@ class AdminPostsController extends Controller
         $post->delete();
 
         return redirect('/admin/posts');
+    }
+
+    public function post($id) {
+
+        $post = Post::findOrFail($id);
+        $comments = Comment::wherePostId($id)->whereIsActive('1')->get();
+        $categories = Category::all();
+
+        return view('post', compact('post', 'comments', 'categories'));
     }
 }

@@ -13,6 +13,7 @@
                 <th>Category</th>
                 <th>Title</th>
                 <th>Body</th>
+                <th>Comments</th>
                 <th>Created at</th>
                 <th>Updated at</th>
             </tr>   
@@ -41,6 +42,7 @@
                         </td>
                         <td>{{ $post->title }}</td>
                         <td>{{ str_limit($post->body, 7) }}</td>
+                        <td><a href="{{ route('admin.comments.show', $post->id) }}">Comments</a></td>
                         <td>{{ $post->created_at->diffForHumans() }}</td>
                         <td>{{ $post->updated_at->diffForHumans() }}</td>
                     </tr>

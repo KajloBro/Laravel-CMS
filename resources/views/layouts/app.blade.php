@@ -49,6 +49,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
                     <li><a href="{{ route('admin.users.index') }}">Admin</a></li>
+                    <li><a href="{{ route('post', 1) }}">Posts</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

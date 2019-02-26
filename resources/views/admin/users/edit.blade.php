@@ -6,7 +6,7 @@
 
     <div class="col-sm-12">
         <div class="col-sm-3">
-            <img src="{{ $user->photo ? $user->photo->path : 'http://placehold.it/400x400' }}" alt="" class="img-responsive img-rounded">    
+            <img height="300" src="{{ $user->photo ? $user->photo->path : 'http://placehold.it/400x400' }}" alt="">    
         </div>
     </div>
 
@@ -42,8 +42,8 @@
             {!! Form::file('photo_id', ['class' => 'form-control']) !!}
         </div>
 
-        <div class="form-group col-sm-6">
-            {!! Form::submit('Update User', ['class' => 'btn btn-primary']) !!}
+        <div class="form-group col-sm-3">
+            {!! Form::submit('Update User', ['class' => 'btn btn-primary btn-block']) !!}
         </div>
 
     {!! Form::close() !!}
@@ -53,8 +53,8 @@
 
     {!! Form::open(['method' => 'DELETE', 'action' => ['AdminUsersController@destroy', $user->id]]) !!}
 
-        <div class="form-group">
-            {!! Form::submit('Delete User', ['class' => 'btn btn-danger pull-right']) !!}
+        <div class="form-group col-sm-3">
+            {!! Form::submit('Delete User', ['class' => 'btn btn-danger btn-block pull-right']) !!}
         </div>
 
     {!! Form::close() !!}

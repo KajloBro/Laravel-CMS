@@ -3,3 +3,37 @@
 #admin-page {
     padding-top: 0;
 }
+
+td {
+    vertical-align: middle !important;
+}
+
+.img50 {
+    height: 50px; 
+    width: 50px; 
+    object-fit: cover;
+}
+
+.img30 {
+    height: 30px; 
+    width: 30px; 
+    object-fit: cover;
+}
+
+.mt-1 {
+    margin-top: 1em;
+}
+
+.media {
+    background-color: #eee;
+    padding: 15px;
+}
+
+.hide-this {
+    display: none;
+}
+
+.btn:focus {
+    outline: none !important
+}
+
