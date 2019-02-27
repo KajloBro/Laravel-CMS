@@ -75,7 +75,7 @@
                             </li>
 
                             <li>
-                                <a href="{{ route('admin.comments.replies.index') }}">Replies</a>
+                                <a href="{{ route('admin.replies.index') }}">Replies</a>
                             </li>
 
                         </ul>
@@ -99,7 +99,7 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i>Media<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="{{ route('admin.media.index') }}">All Media</a>
+                                <a href="{{ route('admin.medias.index') }}">All Media</a>
                             </li>
 
                         </ul>

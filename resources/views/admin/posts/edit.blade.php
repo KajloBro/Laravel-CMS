@@ -2,6 +2,8 @@
 
 @section('content')
 
+@include('includes.tinymce')
+
     <h1>Edit Post</h1>
     
     <img height="80" src="{{ $post->photo->path }}" alt="">

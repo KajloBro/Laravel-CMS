@@ -26,7 +26,7 @@
                         <td><a href="{{ route('post', $comment->post_id) }}">{{ $comment->post->title }}</a></td>
                         <td>{{ $comment->user->name }}</td>
                         <td>{{ str_limit($comment->body, 17) }}</td>
-                        <td><a href="{{ route('admin.comments.replies.show', $comment->id)}}">View replies</a></td>
+                        <td><a href="{{ route('admin.replies.show', $comment->id)}}">View replies</a></td>
 
                         @if ($comment->is_active == 0) 
                             

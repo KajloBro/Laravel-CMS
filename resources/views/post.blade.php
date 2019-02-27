@@ -18,12 +18,12 @@
 <hr>
 
 <!-- Preview Image -->
-<img class="img-responsive" src="{{ $post->photo->path }}" alt="">
+<img class="img50" src="{{ $post->photo->path }}" alt="">
 
 <hr>
 
 <!-- Post Content -->
-<p>{{ $post->body }}</p>
+<p>{!! $post->body !!}</p>
 <hr>
 
 <!-- Blog Comments -->
